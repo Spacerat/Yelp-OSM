@@ -26,7 +26,8 @@ def get_serach_request(client_id, token, latitude, longitude, radius_degrees):
     params = {
         'latitude': latitude,
         'longitude': longitude,
-        'radius': int(max(degrees_to_metres(latitude, longitude, radius_degrees)))
+        'radius': int(max(degrees_to_metres(latitude, longitude, radius_degrees))),
+        'limit': 500
     }
     return yelp.get('https://api.yelp.com/v3/businesses/search',params=params)
 
